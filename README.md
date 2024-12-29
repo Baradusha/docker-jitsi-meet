@@ -1,5 +1,25 @@
 # <p align="center">Jitsi Meet</p>
 
+<hr />
+
+**ДЛЯ ТОГО ЧТОБЫ ПЕРЕСОБРАТЬ КОНТЕЙНЕР:**
+
+**1. Перейти в jitsi-meet**
+
+**2. make**
+
+**3. docker-compose up --build -d**
+
+<hr />
+
+**ДЛЯ ТОГО ЧТОБЫ ЗАПУСТИТЬ ЛОКАЛЬНЫЙ СЕРВЕР:**
+
+**1. npm install (node v22.12.0)**
+
+**2. npm start**
+
+<hr />
+
 Jitsi Meet is a set of Open Source projects which empower users to use and deploy
 video conferencing platforms with state-of-the-art video quality and features.
 
