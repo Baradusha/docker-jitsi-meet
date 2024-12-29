@@ -66,14 +66,14 @@ const useStyles = makeStyles<IOptions, 'screenSharing'>()((theme, options: IOpti
             width: '100%',
             zIndex: 1
         },
-        containerElevated: {
-            marginBottom: getVideospaceFloatingElementsBottomSpacing(theme, true),
-            transition: moveUpTransition,
-            [`&.${classes.screenSharing}`]: {
-                opacity: 1,
-                transition: `${showTransition}, ${moveUpTransition}`
-            }
-        },
+        // containerElevated: {
+        //     marginBottom: getVideospaceFloatingElementsBottomSpacing(theme, true),
+        //     transition: moveUpTransition,
+        //     [`&.${classes.screenSharing}`]: {
+        //         opacity: 1,
+        //         transition: `${showTransition}, ${moveUpTransition}`
+        //     }
+        // },
         screenSharing: {
             opacity: 0,
             transition: `${hideTransition}, ${moveDownTransition}`
@@ -104,7 +104,7 @@ const StageParticipantNameLabel = () => {
             <div
                 className = { cx(
                     classes.badgeContainer,
-                    toolboxVisible && classes.containerElevated,
+                    // toolboxVisible && classes.containerElevated,
                     _isScreenShareParticipant && classes.screenSharing
                 ) }
                 data-testid = 'stage-display-name' >

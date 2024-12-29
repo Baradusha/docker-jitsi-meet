@@ -254,14 +254,13 @@ export const commonStyles = (theme: Theme) => {
         },
 
         '.toolbox-content-items': {
-            background: theme.palette.ui01,
+            background: '#FFF',
             borderRadius: 6,
             margin: '0 auto',
             padding: 6,
             textAlign: 'center' as const,
             pointerEvents: 'all' as const,
             display: 'flex',
-            boxShadow: '0px 2px 8px 4px rgba(0, 0, 0, 0.25), 0px 0px 0px 1px rgba(0, 0, 0, 0.15)',
 
             '& > div': {
                 marginRight: theme.spacing(2),

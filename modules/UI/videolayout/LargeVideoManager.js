@@ -521,7 +521,7 @@ export default class LargeVideoManager {
                 <Avatar
                     id = "dominantSpeakerAvatar"
                     participantId = { this.id }
-                    size = { 200 } />
+                    size = { 81 } />
             </Provider>,
             this._dominantSpeakerAvatarContainer
         );

@@ -23,11 +23,9 @@
  * TODO: when the old filmstrip has been removed, remove the "new-" prefix.
  */
 .new-toolbox {
-    bottom: calc((#{$newToolbarSize} * 2) * -1);
     left: 0;
     position: absolute;
     right: 0;
-    transition: bottom .3s ease-in;
     width: 100%;
     pointer-events: none;
     z-index: $toolbarZ + 2;
@@ -88,6 +86,12 @@
 
     .toolbox-content-items {
         @include ltr;
+        border-radius: 0;
+        display: flex;
+        padding: 8px 0;
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
     }
 }
 
@@ -188,9 +192,10 @@ div.hangup-menu-button {
             @include ltr;
             border-radius: 0;
             display: flex;
-            justify-content: space-evenly;
             padding: 8px 0;
             width: 100%;
+            justify-content: center;
+            gap: 12px;
         }
 
         .invite-more-container {

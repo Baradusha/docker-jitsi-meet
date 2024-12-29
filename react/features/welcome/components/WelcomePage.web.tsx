@@ -210,7 +210,7 @@ class WelcomePage extends AbstractWelcomePage<IProps> {
                         </div>
                         <h1 className="header-text-title">
                             {/* {t('welcomepage.headerTitle')} */}
-                            ЕСЛИ ТЫ ЭТО ВИДИШЬ ЗНАЧИТ ЕТО ТЕСТОВЫЙ СЕРВЕР JITSI НА ДОКЕРЕ
+                            TEST SERVER
                         </h1>
                         <span className="header-text-subtitle">{t("welcomepage.headerSubtitle")}</span>
                         <div id="enter_room">

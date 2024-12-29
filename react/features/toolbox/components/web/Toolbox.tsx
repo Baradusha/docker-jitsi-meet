@@ -218,8 +218,7 @@ export default function Toolbox({
     }
 
 
-    const rootClassNames = `new-toolbox ${toolbarVisible ? 'visible' : ''} ${
-        toolbarButtonsToUse.length ? '' : 'no-buttons'} ${chatOpen ? 'shift-right' : ''}`;
+    const rootClassNames = `new-toolbox visible ${chatOpen ? 'shift-right' : ''}`;
 
     const toolbarAccLabel = 'toolbar.accessibilityLabel.moreActionsMenu';
     const containerClassName = `toolbox-content${isMobile || isNarrowLayout ? ' toolbox-content-mobile' : ''}`;
