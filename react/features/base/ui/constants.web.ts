@@ -217,23 +217,28 @@ export const commonStyles = (theme: Theme) => {
             justifyContent: 'center',
             width: 48,
 
-            '@media (hover: hover) and (pointer: fine)': {
-                '&:hover': {
-                    backgroundColor: theme.palette.ui04
-                },
+            '& svg': {
+                height: 40,
+                width: 40
+            },
 
-                '&:active': {
-                    backgroundColor: theme.palette.ui03
-                }
+            '@media (hover: hover) and (pointer: fine)': {
+                // '&:hover': {
+                //     backgroundColor: theme.palette.ui04
+                // },
+
+                // '&:active': {
+                //     borderColor: '#D6331F',
+                // }
             },
             [theme.breakpoints.down(320)]: {
-                height: 36,
-                width: 36
+                height: 40,
+                width: 40
             },
 
-            '&.toggled': {
-                backgroundColor: theme.palette.ui03
-            },
+            // '&.toggled': {
+            //     backgroundColor: theme.palette.ui03
+            // },
 
             '&.disabled': {
                 cursor: 'initial !important',
@@ -262,13 +267,13 @@ export const commonStyles = (theme: Theme) => {
             pointerEvents: 'all' as const,
             display: 'flex',
 
-            '& > div': {
-                marginRight: theme.spacing(2),
+            // '& > div': {
+            //     marginRight: theme.spacing(2),
 
-                '&:last-of-type': {
-                    marginRight: 0
-                }
-            }
+            //     '&:last-of-type': {
+            //         marginRight: 0
+            //     }
+            // }
         }
     };
 };

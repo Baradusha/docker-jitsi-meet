@@ -119,7 +119,7 @@ interface IProps extends AbstractProps, WithTranslation {
  * @returns {boolean} - True if the prejoin screen should be displayed and false otherwise.
  */
 function shouldShowPrejoin({ _showPrejoin, _showVisitorsQueue }: IProps) {
-    return _showPrejoin && !_showVisitorsQueue;
+    return false; //ДОБАВИТЬ СВОЮ СТРАНИЦУ ПРЕДВАРИТЕЛЬНОГО ВЫЗОВА
 }
 
 /**
