@@ -220,15 +220,14 @@
 }
 
 #dominantSpeakerAvatarContainer {
-    position: relative;
+    position: absolute;
+    top: 60px;
 }
 
 .dynamic-shadow {
     border-radius: 50%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 60px;
 }
 
 .avatar-container {

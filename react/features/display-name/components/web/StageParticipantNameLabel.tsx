@@ -57,11 +57,10 @@ const useStyles = makeStyles<IOptions, 'screenSharing'>()((theme, options: IOpti
             alignItems: 'center',
             display: 'inline-flex',
             justifyContent: 'center',
-            marginBottom: getVideospaceFloatingElementsBottomSpacing(theme, false),
             transition: moveDownTransition,
             pointerEvents: 'none',
             position: 'absolute',
-            bottom: 0,
+            bottom: 108,
             left: 0,
             width: '100%',
             zIndex: 1

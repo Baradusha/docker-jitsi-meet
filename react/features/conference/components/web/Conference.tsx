@@ -120,6 +120,7 @@ interface IProps extends AbstractProps, WithTranslation {
  */
 function shouldShowPrejoin({ _showPrejoin, _showVisitorsQueue }: IProps) {
     return false; //ДОБАВИТЬ СВОЮ СТРАНИЦУ ПРЕДВАРИТЕЛЬНОГО ВЫЗОВА
+    // return _showPrejoin && !_showVisitorsQueue;
 }
 
 /**

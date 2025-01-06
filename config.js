@@ -185,7 +185,7 @@ var config = {
 
     // Start calls with audio muted. Unlike the option above, this one is only
     // applied locally. FIXME: having these 2 options is confusing.
-    startWithAudioMuted: false,
+    // startWithAudioMuted: false,
 
     // Enabling it (with #params) will disable local audio output of remote
     // participants and to enable it back a reload is needed.
@@ -336,7 +336,7 @@ var config = {
 
     // Start calls with video muted. Unlike the option above, this one is only
     // applied locally. FIXME: having these 2 options is confusing.
-    startWithVideoMuted: false,
+    // startWithVideoMuted: false,
 
     // Desktop sharing
 
@@ -786,22 +786,22 @@ var config = {
     // enableCalendarIntegration: false,
 
     // Configs for prejoin page.
-    prejoinConfig: {
-        // When 'true', it shows an intermediate page before joining, where the user can configure their devices.
-        // This replaces `prejoinPageEnabled`. Defaults to true.
-        enabled: false,
-        // Hides the participant name editing field in the prejoin screen.
-        // If requireDisplayName is also set as true, a name should still be provided through
-        // either the jwt or the userInfo from the iframe api init object in order for this to have an effect.
-        hideDisplayName: false,
-        // List of buttons to hide from the extra join options dropdown.
-        hideExtraJoinButtons: ['no-audio', 'by-phone'],
-        // Configuration for pre-call test
-        // By setting preCallTestEnabled, you enable the pre-call test in the prejoin page.
-        // ICE server credentials need to be provided over the preCallTestICEUrl
-        preCallTestEnabled: false,
-        preCallTestICEUrl: ''
-    },
+    // prejoinConfig: {
+    //     // When 'true', it shows an intermediate page before joining, where the user can configure their devices.
+    //     // This replaces `prejoinPageEnabled`. Defaults to true.
+    //     enabled: false,
+    //     // Hides the participant name editing field in the prejoin screen.
+    //     // If requireDisplayName is also set as true, a name should still be provided through
+    //     // either the jwt or the userInfo from the iframe api init object in order for this to have an effect.
+    //     hideDisplayName: false,
+    //     // List of buttons to hide from the extra join options dropdown.
+    //     hideExtraJoinButtons: ['no-audio', 'by-phone'],
+    //     // Configuration for pre-call test
+    //     // By setting preCallTestEnabled, you enable the pre-call test in the prejoin page.
+    //     // ICE server credentials need to be provided over the preCallTestICEUrl
+    //     preCallTestEnabled: false,
+    //     preCallTestICEUrl: ''
+    // },
 
     // When 'true', the user cannot edit the display name.
     // (Mainly useful when used in conjunction with the JWT so the JWT name becomes read only.)
