@@ -40,14 +40,14 @@ const AudioLevels = {
         // Internal circle audio level.
         const int = {
             level: level > 0.15 ? 20 : 0,
-            color: interfaceConfig.AUDIO_LEVEL_PRIMARY_COLOR
+            color: 'rgba(15, 235, 142, 0.15)'
         };
 
         // External circle audio level.
         const ext = {
             level: parseFloat(
                 ((int.level * scale * level) + int.level).toFixed(0)),
-            color: interfaceConfig.AUDIO_LEVEL_SECONDARY_COLOR
+            color: 'rgba(15, 235, 142, 0.15)'
         };
 
         // Internal blur.
