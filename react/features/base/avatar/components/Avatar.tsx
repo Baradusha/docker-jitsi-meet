@@ -225,6 +225,8 @@ class Avatar<P extends IProps> extends PureComponent<P, IState> {
             avatarProps.url = effectiveURL;
         }
 
+        console.log('%c AVATAR PROPS:','color: red;', this.props);
+
         const initials = getInitials(_initialsBase);
 
         if (initials) {
@@ -282,11 +284,13 @@ export function _mapStateToProps(state: IReduxState, ownProps: IProps) {
     const _initialsBase = _participant?.name ?? displayName;
     const { corsAvatarURLs } = state['features/base/config'];
 
+    // console.log('%c PARTICIPANT INFO', 'color: yellow', _participant);
+
     return {
         _customAvatarBackgrounds: state['features/dynamic-branding'].avatarBackgrounds,
         _corsAvatarURLs: corsAvatarURLs,
         _initialsBase,
-        _loadableAvatarUrl: _participant?.loadableAvatarUrl,
+        _loadableAvatarUrl: _participant?.email,
         _loadableAvatarUrlUseCORS: _participant?.loadableAvatarUrlUseCORS,
         colorBase
     };
