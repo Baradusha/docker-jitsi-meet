@@ -12,7 +12,7 @@ const useStyles = makeStyles()(() => {
             textOverflow: "ellipsis",
             whiteSpace: "nowrap",
             fontSize: "20px",
-            fontWeight: "500",
+            fontWeight: "normal",
             color: "#262842",
         }
     };
