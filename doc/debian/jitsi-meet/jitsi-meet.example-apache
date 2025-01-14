@@ -1,11 +1,11 @@
 
 <VirtualHost *:80>
-    ServerName 135.181.224.218
+    ServerName jitsi-meet.example.com
     Redirect permanent / https://jitsi-meet.example.com/
 </VirtualHost>
 
 <VirtualHost *:443>
-    ServerName 135.181.224.218
+    ServerName jitsi-meet.example.com
 
     # enable HTTP/2, if available
     Protocols h2 http/1.1
