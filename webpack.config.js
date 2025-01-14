@@ -238,7 +238,7 @@ function getDevServerConfig() {
                 warnings: false
             }
         },
-        host: '0.0.0.0',
+        host: '127.0.0.1',
         port: 8000,
         hot: true,
         proxy: [
@@ -246,9 +246,9 @@ function getDevServerConfig() {
                 context: [ '/' ],
                 bypass: devServerProxyBypass,
                 secure: false,
-                target: 'https://135.181.224.218:8443',
+                target: devServerProxyTarget,
                 headers: {
-                    'Host': '135.181.224.218:8443'
+                    'Host': new URL(devServerProxyTarget).host
                 }
             }
         ],
