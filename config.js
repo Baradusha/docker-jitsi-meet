@@ -30,7 +30,7 @@ var config = {
 
     hosts: {
         // XMPP domain.
-        domain: '135.181.224.218',
+        domain: 'jitsi-meet.example.com',
 
         // When using authentication, domain for guest users.
         // anonymousdomain: 'guest.example.com',
@@ -39,17 +39,17 @@ var config = {
         // authdomain: 'jitsi-meet.example.com',
 
         // Focus component domain. Defaults to focus.<domain>.
-        focus: 'focus.135.181.224.218',
+        // focus: 'focus.jitsi-meet.example.com',
 
         // XMPP MUC domain. FIXME: use XEP-0030 to discover it.
-        muc: 'conference.135.181.224.218',
+        muc: 'conference.' + subdomain + 'jitsi-meet.example.com',
     },
 
     // BOSH URL. FIXME: use XEP-0156 to discover it.
-    bosh: '135.181.224.218/http-bind',
+    bosh: 'jitsi-meet.example.com/' + subdir + 'http-bind',
 
     // Websocket URL (XMPP)
-    websocket: 'wss://135.181.224.218/xmpp-websocket',
+    // websocket: 'wss://jitsi-meet.example.com/' + subdir + 'xmpp-websocket',
 
     // Whether BOSH should be preferred over WebSocket if both are configured.
     // preferBosh: false,
