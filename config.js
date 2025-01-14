@@ -39,7 +39,7 @@ var config = {
         // authdomain: 'jitsi-meet.example.com',
 
         // Focus component domain. Defaults to focus.<domain>.
-        // focus: 'focus.jitsi-meet.example.com',
+        focus: 'focus.135.181.224.218',
 
         // XMPP MUC domain. FIXME: use XEP-0030 to discover it.
         muc: 'conference.135.181.224.218',
