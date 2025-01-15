@@ -103,8 +103,7 @@ export default function Toolbox({
         = useSelector((state: IReduxState) => state['features/toolbox'].mainToolbarButtonsThresholds);
     const allButtons = useToolboxButtons(customToolbarButtons);
     const isMobile = isMobileBrowser();
-    const endConferenceSupported = false;
-    // const endConferenceSupported = Boolean(conference?.isEndConferenceSupported() && isModerator);
+    const endConferenceSupported = Boolean(conference?.isEndConferenceSupported() && isModerator);
 
     useKeyboardShortcuts(toolbarButtonsToUse);
 
@@ -298,28 +297,30 @@ export default function Toolbox({
                         )}
 
                         {isButtonEnabled('hangup', toolbarButtonsToUse) && (
-                            endConferenceSupported
-                                ? <HangupMenuButton
-                                    ariaControls = 'hangup-menu'
-                                    isOpen = { hangupMenuVisible }
-                                    key = 'hangup-menu'
-                                    notifyMode = { buttonsWithNotifyClick?.get('hangup-menu') }
-                                    onVisibilityChange = { onSetHangupVisible }>
-                                    <ContextMenu
-                                        accessibilityLabel = { t(toolbarAccLabel) }
-                                        className = { classes.hangupMenu }
-                                        hidden = { false }
-                                        inDrawer = { overflowDrawer }
-                                        onKeyDown = { onEscKey }>
-                                        <EndConferenceButton
-                                            buttonKey = 'end-meeting'
-                                            notifyMode = { buttonsWithNotifyClick?.get('end-meeting') } />
-                                        <LeaveConferenceButton
-                                            buttonKey = 'hangup'
-                                            notifyMode = { buttonsWithNotifyClick?.get('hangup') } />
-                                    </ContextMenu>
-                                </HangupMenuButton>
-                                : <HangupButton
+                            // endConferenceSupported
+                                // ? 
+                                // <HangupMenuButton
+                                //     ariaControls = 'hangup-menu'
+                                //     isOpen = { hangupMenuVisible }
+                                //     key = 'hangup-menu'
+                                //     notifyMode = { buttonsWithNotifyClick?.get('hangup-menu') }
+                                //     onVisibilityChange = { onSetHangupVisible }>
+                                //     <ContextMenu
+                                //         accessibilityLabel = { t(toolbarAccLabel) }
+                                //         className = { classes.hangupMenu }
+                                //         hidden = { false }
+                                //         inDrawer = { overflowDrawer }
+                                //         onKeyDown = { onEscKey }>
+                                //         <EndConferenceButton
+                                //             buttonKey = 'end-meeting'
+                                //             notifyMode = { buttonsWithNotifyClick?.get('end-meeting') } />
+                                //         <LeaveConferenceButton
+                                //             buttonKey = 'hangup'
+                                //             notifyMode = { buttonsWithNotifyClick?.get('hangup') } />
+                                //     </ContextMenu>
+                                // </HangupMenuButton>
+                                // :
+                                 <HangupButton
                                     buttonKey = 'hangup'
                                     customClass = 'hangup-button'
                                     key = 'hangup-button'
