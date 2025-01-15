@@ -103,7 +103,8 @@ export default function Toolbox({
         = useSelector((state: IReduxState) => state['features/toolbox'].mainToolbarButtonsThresholds);
     const allButtons = useToolboxButtons(customToolbarButtons);
     const isMobile = isMobileBrowser();
-    const endConferenceSupported = Boolean(conference?.isEndConferenceSupported() && isModerator);
+    const endConferenceSupported = false;
+    // const endConferenceSupported = Boolean(conference?.isEndConferenceSupported() && isModerator);
 
     useKeyboardShortcuts(toolbarButtonsToUse);
 
