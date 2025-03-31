@@ -1900,10 +1900,10 @@ class API {
      * @param {string} id - Id of the dominant participant.
      * @returns {void}
      */
-    notifyDominantSpeakerChanged(id) {
+    notifyDominantSpeakerChanged(timer) {
         this._sendEvent({
             name: 'dominant-speaker-changed',
-            id
+            timer
         });
     }
 

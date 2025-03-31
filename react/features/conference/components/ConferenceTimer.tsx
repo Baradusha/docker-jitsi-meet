@@ -56,6 +56,8 @@ const ConferenceTimer = ({ textStyle }: IProps) => {
 
         const localizedTime = getLocalizedDurationFormatter(timerMsValue);
 
+        APP.API.notifyDominantSpeakerChanged(localizedTime);
+
         setTimerValue(localizedTime);
     }, []);
 

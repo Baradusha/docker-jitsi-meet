@@ -47,7 +47,7 @@ MiddlewareRegistry.register(store => next => action => {
         if (dominantSpeaker?.id !== action.participant.id) {
             const result = next(action);
 
-            APP.API.notifyDominantSpeakerChanged(action.participant.id);
+            // APP.API.notifyDominantSpeakerChanged(action.participant.id);
 
             return result;
         }

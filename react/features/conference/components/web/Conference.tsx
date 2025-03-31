@@ -42,6 +42,7 @@ import type { AbstractProps } from '../AbstractConference';
 
 import ConferenceInfo from './ConferenceInfo';
 import { default as Notice } from './Notice';
+import CallInfo from '../../../toolbox/components/web/CallInfo';
 
 /**
  * DOM events for when full screen mode has changed. Different browsers need
@@ -118,9 +119,9 @@ interface IProps extends AbstractProps, WithTranslation {
  * @param {IProps} props - The props object.
  * @returns {boolean} - True if the prejoin screen should be displayed and false otherwise.
  */
-function shouldShowPrejoin({ _showPrejoin, _showVisitorsQueue }: IProps) {
-    return false; //ДОБАВИТЬ СВОЮ СТРАНИЦУ ПРЕДВАРИТЕЛЬНОГО ВЫЗОВА
-    // return _showPrejoin && !_showVisitorsQueue;
+function shouldShowPrejoin({ _showLobby, _showPrejoin, _showVisitorsQueue }: IProps) {
+    // return _showPrejoin && !_showVisitorsQueue && !_showLobby;
+    return false;
 }
 
 /**
@@ -242,7 +243,7 @@ class Conference extends AbstractConference<IProps, any> {
                     className = { _layoutClassName }
                     id = 'videoconference_page'
                     onMouseMove = { isMobileBrowser() ? undefined : this._onShowToolbar }>
-                    <ConferenceInfo />
+                    {/* <ConferenceInfo /> */}
                     <Notice />
                     <div
                         id = 'videospace'
@@ -256,7 +257,7 @@ class Conference extends AbstractConference<IProps, any> {
                             </>)
                         }
                     </div>
-
+                    <CallInfo/>
                     { _showPrejoin || _showLobby || (
                         <>
                             <span

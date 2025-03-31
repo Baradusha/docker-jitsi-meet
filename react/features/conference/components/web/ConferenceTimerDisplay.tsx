@@ -8,17 +8,9 @@ const useStyles = makeStyles()(theme => {
     return {
         timer: {
             ...withPixelLineHeight(theme.typography.labelRegular),
-            color: theme.palette.text01,
-            padding: '6px 8px',
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-            boxSizing: 'border-box',
-            height: '28px',
-            borderRadius: `0 ${theme.shape.borderRadius}px ${theme.shape.borderRadius}px 0`,
-            marginRight: '2px',
-
-            '@media (max-width: 300px)': {
-                display: 'none'
-            }
+            color: "#A9A9B8",
+            fontSize: "18px",
+            fontWeight: "400",
         }
     };
 });

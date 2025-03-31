@@ -1,7 +1,7 @@
 import { Theme } from '@mui/material';
 import clsx from 'clsx';
 import { debounce } from 'lodash-es';
-import React, { Component, KeyboardEvent, RefObject, createRef } from 'react';
+import React, { Component, KeyboardEvent, RefObject, createRef, useEffect } from 'react';
 import { WithTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { withStyles } from 'tss-react/mui';
@@ -88,6 +88,11 @@ export interface IState {
      * Whether popover is visible or not.
      */
     popoverVisible: boolean;
+
+    /**
+     * Indicates whether the thumbnail is visible or not.
+     */
+    isVisible: boolean;
 }
 
 /**
@@ -282,7 +287,7 @@ const defaultStyles = (theme: Theme) => {
         },
 
         indicatorsBackground: {
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            // backgroundColor: 'rgba(0, 0, 0, 0.7)',
             borderRadius: '4px',
             display: 'flex',
             alignItems: 'center',
@@ -409,11 +414,15 @@ class Thumbnail extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
 
+        // Проверяем начальное состояние видео
+        const initialIsVisible = !props._videoTrack?.muted && props._videoTrack?.videoStarted;
+
         const state = {
             canPlayEventReceived: false,
             displayMode: DISPLAY_VIDEO,
             popoverVisible: false,
-            isHovered: false
+            isHovered: false,
+            isVisible: initialIsVisible
         };
 
         this.state = {
@@ -451,18 +460,23 @@ class Thumbnail extends Component<IProps, IState> {
      * @returns {void}
      */
     componentDidMount() {
-        this._onDisplayModeChanged();
+        const { _videoTrack } = this.props;
+        
+        const shouldBeVisible = !_videoTrack?.muted && _videoTrack?.videoStarted;
+        if (this.state.isVisible !== shouldBeVisible) {
+            this.setState({ isVisible: shouldBeVisible });
+        }
 
+        this._onDisplayModeChanged();
 
         // Listen to track streaming status changed event to keep it updated.
         // TODO: after converting this component to a react function component,
         // use a custom hook to update local track streaming status.
-        const { _videoTrack, dispatch } = this.props;
 
         if (_videoTrack && !_videoTrack.local) {
             _videoTrack.jitsiTrack.on(JitsiTrackEvents.TRACK_STREAMING_STATUS_CHANGED,
                 this.handleTrackStreamingStatusChanged);
-            dispatch(trackStreamingStatusChanged(_videoTrack.jitsiTrack,
+            this.props.dispatch(trackStreamingStatusChanged(_videoTrack.jitsiTrack,
                 _videoTrack.jitsiTrack.getTrackStreamingStatus()));
         }
     }
@@ -494,13 +508,23 @@ class Thumbnail extends Component<IProps, IState> {
      * @returns {void}
      */
     componentDidUpdate(prevProps: IProps, prevState: IState) {
+        const { _videoTrack } = this.props;
+        
+        if (prevProps._videoTrack?.muted !== _videoTrack?.muted || 
+            prevProps._videoTrack?.videoStarted !== _videoTrack?.videoStarted) {
+            const shouldBeVisible = !_videoTrack?.muted && _videoTrack?.videoStarted;
+            if (this.state.isVisible !== shouldBeVisible) {
+                this.setState({ isVisible: shouldBeVisible });
+            }
+        }
+
         if (prevState.displayMode !== this.state.displayMode) {
             this._onDisplayModeChanged();
         }
 
         // TODO: after converting this component to a react function component,
         // use a custom hook to update local track streaming status.
-        const { _videoTrack, dispatch } = this.props;
+        const { dispatch } = this.props;
 
         if (prevProps._videoTrack?.jitsiTrack?.getSourceName() !== _videoTrack?.jitsiTrack?.getSourceName()) {
             if (prevProps._videoTrack && !prevProps._videoTrack.local) {
@@ -655,7 +679,7 @@ class Thumbnail extends Component<IProps, IState> {
      * @returns {Object} - The styles for the thumbnail.
      */
     _getStyles(): any {
-        const { canPlayEventReceived } = this.state;
+        const { canPlayEventReceived, isVisible } = this.state;
         const {
             _disableTileEnlargement,
             _height,
@@ -670,6 +694,17 @@ class Thumbnail extends Component<IProps, IState> {
             horizontalOffset,
             style
         } = this.props;
+
+        if (!isVisible) {
+            return {
+                thumbnail: {
+                    ...style,
+                    display: 'none'
+                },
+                avatar: {},
+                video: {}
+            };
+        }
 
         const isTileType = _thumbnailType === THUMBNAIL_TYPE.TILE;
         const jitsiVideoTrack = _videoTrack?.jitsiTrack;
@@ -1100,7 +1135,7 @@ class Thumbnail extends Component<IProps, IState> {
                 {!_gifSrc && (local
                     ? <span id = 'localVideoWrapper'>{video}</span>
                     : video)}
-                <div className = { classes.containerBackground } />
+                {/* <div className = { classes.containerBackground } /> */}
                 {/* put the bottom container before the top container in the dom,
                 because it contains the participant name that should be announced first by screen readers */}
                 <div

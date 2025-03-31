@@ -48,7 +48,7 @@ export function getCurrentLayout(state: IReduxState) {
         return LAYOUTS.VERTICAL_FILMSTRIP_VIEW;
     }
 
-    return LAYOUTS.HORIZONTAL_FILMSTRIP_VIEW;
+    return LAYOUTS.VERTICAL_FILMSTRIP_VIEW;
 }
 
 /**

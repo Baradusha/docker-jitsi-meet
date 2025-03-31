@@ -334,7 +334,12 @@ class Filmstrip extends PureComponent <IProps, IState> {
      * @returns {ReactElement}
      */
     render() {
-        const filmstripStyle: any = { };
+        const filmstripStyle: any = {
+            position: 'fixed',
+            right: '0',
+            bottom: '0',
+            zIndex: 1
+        };
         const {
             _currentLayout,
             _disableSelfView,
@@ -379,9 +384,6 @@ class Filmstrip extends PureComponent <IProps, IState> {
         } else if (_currentLayout === LAYOUTS.VERTICAL_FILMSTRIP_VIEW
             || (_currentLayout === LAYOUTS.STAGE_FILMSTRIP_VIEW && filmstripType === FILMSTRIP_TYPE.MAIN)) {
             filmstripStyle.maxWidth = _verticalViewMaxWidth;
-            if (!_mainFilmstripVisible) {
-                filmstripStyle.right = `-${filmstripStyle.maxWidth}px`;
-            }
         }
 
         let toolbar = null;
@@ -731,7 +733,8 @@ class Filmstrip extends PureComponent <IProps, IState> {
             overscanCount: 1,
             width: _filmstripWidth,
             style: {
-                willChange: 'auto'
+                willChange: 'auto',
+                display: 'none'
             }
         };
 

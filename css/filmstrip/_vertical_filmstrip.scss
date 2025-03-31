@@ -2,6 +2,7 @@
     span:not(.tile-view) .filmstrip {
         &.hide-videos {
             .remote-videos {
+                display: none;
                 & > div {
                     opacity: 0;
                     pointer-events: none;
@@ -81,13 +82,19 @@
             height: auto;
             justify-content: flex-start;
             width: 100%;
+            position: fixed;
+            bottom: 98px;
+            right: 16px;
+            width: fit-content;
+            pointer-events: none;
 
             #filmstripLocalVideoThumbnail {
                 width: calc(100% - 15px);
 
                 .videocontainer {
-                    height: 0px;
-                    width: 100%;
+                    height: 120px !important;
+                    width: 240px !important;
+                    border-radius: 8px;
                 }
             }
         }

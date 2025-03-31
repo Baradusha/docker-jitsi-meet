@@ -210,35 +210,32 @@ export const commonStyles = (theme: Theme) => {
 
         '.toolbox-icon': {
             display: 'flex',
-            borderRadius: 3,
+            borderRadius: 10,
             flexDirection: 'column' as const,
             fontSize: 24,
-            height: 48,
+            height: 40,
             justifyContent: 'center',
-            width: 48,
-
-            '& svg': {
-                height: 40,
-                width: 40
-            },
+            width: 40,
+            backgroundColor: '#15162D',
+            border: '1px solid #FFFFFF1F',
 
             '@media (hover: hover) and (pointer: fine)': {
-                // '&:hover': {
-                //     backgroundColor: theme.palette.ui04
-                // },
+                '&:hover': {
+                    backgroundColor: theme.palette.ui04
+                },
 
-                // '&:active': {
-                //     borderColor: '#D6331F',
-                // }
+                '&:active': {
+                    backgroundColor: theme.palette.ui03
+                }
             },
             [theme.breakpoints.down(320)]: {
-                height: 40,
-                width: 40
+                height: 36,
+                width: 36
             },
 
-            // '&.toggled': {
-            //     backgroundColor: theme.palette.ui03
-            // },
+            '&.toggled': {
+                backgroundColor: theme.palette.ui03
+            },
 
             '&.disabled': {
                 cursor: 'initial !important',
@@ -259,21 +256,13 @@ export const commonStyles = (theme: Theme) => {
         },
 
         '.toolbox-content-items': {
-            background: '#FFF',
-            borderRadius: 6,
+            background: '#262842',
             margin: '0 auto',
-            padding: 6,
+            padding: '20px 0',
             textAlign: 'center' as const,
             pointerEvents: 'all' as const,
             display: 'flex',
-
-            // '& > div': {
-            //     marginRight: theme.spacing(2),
-
-            //     '&:last-of-type': {
-            //         marginRight: 0
-            //     }
-            // }
+            gap: 12,
         }
     };
 };

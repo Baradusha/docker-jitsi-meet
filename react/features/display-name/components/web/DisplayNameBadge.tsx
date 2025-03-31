@@ -3,17 +3,19 @@ import { makeStyles } from 'tss-react/mui';
 
 import { DISPLAY_NAME_VERTICAL_PADDING } from './styles';
 
-const useStyles = makeStyles()(() => {
+const useStyles = makeStyles()(theme => {
+    const { text01 } = theme.palette;
 
     return {
         badge: {
-            maxWidth: "90%",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap",
-            fontSize: "20px",
-            fontWeight: "normal",
-            color: "#262842",
+            background: 'rgba(0, 0, 0, 0.6)',
+            borderRadius: '3px',
+            color: text01,
+            maxWidth: '50%',
+            overflow: 'hidden',
+            padding: `${DISPLAY_NAME_VERTICAL_PADDING / 2}px 16px`,
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap'
         }
     };
 });

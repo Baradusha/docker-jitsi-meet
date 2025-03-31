@@ -66,41 +66,20 @@ export const styles = (theme: Theme) => {
         },
 
         filmstrip: {
-            transition: 'background .2s ease-in-out, right 1s, bottom 1s, top 1s, height .3s ease-in',
+            backgroundColor: 'transparent',
+            position: 'fixed',
             right: 0,
             bottom: 0,
+            zIndex: 1,
+            // '&:hover, &:focus-within': {
+            //     '& .resizable-filmstrip': {
+            //         backgroundColor: BACKGROUND_COLOR
+            //     },
 
-            '&:hover, &:focus-within': {
-                '& .resizable-filmstrip': {
-                    backgroundColor: BACKGROUND_COLOR
-                },
-
-                '& .filmstrip-hover': {
-                    backgroundColor: BACKGROUND_COLOR
-                },
-
-                '& .toggleFilmstripContainer': {
-                    opacity: 1
-                },
-
-                '& .dragHandleContainer': {
-                    visibility: 'visible' as const
-                }
-            },
-
-            '.horizontal-filmstrip &.hidden': {
-                bottom: '-50px',
-
-                '&:hover': {
-                    backgroundColor: 'transparent'
-                }
-            },
-
-            '&.hidden': {
-                '& .toggleFilmstripContainer': {
-                    opacity: 1
-                }
-            }
+            //     '& .filmstrip-hover': {
+            //         backgroundColor: BACKGROUND_COLOR
+            //     }
+            // }
         },
 
         filmstripBackground: {
@@ -116,8 +95,8 @@ export const styles = (theme: Theme) => {
             position: 'relative' as const,
             flexDirection: 'row' as const,
             alignItems: 'center',
-            height: '100%',
-            width: '100%',
+            // height: '100%',
+            // width: '100%',
             transition: 'background .2s ease-in-out',
 
             '& .avatar-container': {

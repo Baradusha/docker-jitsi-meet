@@ -28,6 +28,7 @@
     justify-content: center;
     margin: 0 auto;
     height: 28px;
+    display: none;
 
     @media (max-width: 500px) {
         flex-wrap: wrap;
@@ -41,7 +42,6 @@
     position: absolute;
     top: 0;
     height: 48px;
-    display: none;
 }
 
 @keyframes hideSubject {
