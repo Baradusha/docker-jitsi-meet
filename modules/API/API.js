@@ -1906,6 +1906,13 @@ class API {
             timer
         });
     }
+    
+    notifyUserStatusChanged(event) {
+        this._sendEvent({
+            name: 'user-status-changed',
+            event
+        })
+    }
 
     /**
      * Notify external application (if API is enabled) that the conference

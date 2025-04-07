@@ -1540,9 +1540,13 @@ export default {
             APP.store.dispatch(participantPresenceChanged(id, status));
 
             const user = room.getParticipantById(id);
+            console.log('%c USER STATUS CHANGED ON JITSI', 'color:red;', {user, status});
 
             if (user) {
                 APP.UI.updateUserStatus(user, status);
+                console.log('%c USER STATUS CHANGED ON JITSI', 'color:yellow;', {user, status});
+                
+                APP.API.notifyUserStatusChanged(user,status)
             }
         });
 
