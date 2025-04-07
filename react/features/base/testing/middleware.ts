@@ -113,7 +113,7 @@ function _onConnectionEvent(event: string, dispatch: IStore['dispatch']) {
     case JitsiConferenceEvents.CONNECTION_ESTABLISHED:
     case JitsiConferenceEvents.CONNECTION_INTERRUPTED:
     case JitsiConferenceEvents.CONNECTION_RESTORED:
-        APP.API.notifyUserStatusChanged(event);
+        APP.API.notifyDominantSpeakerChanged(event);
         console.log('%c _onConnectionEvent', 'color:red;', event);
         dispatch(setConnectionState(event));
         break;
