@@ -297,7 +297,7 @@ export default function Toolbox({
                                 showReactionsMenu = { showReactionsInOverflowMenu } />
                         )}
 
-                        {isButtonEnabled('hangup', toolbarButtonsToUse) && (
+                        {/* {isButtonEnabled('hangup', toolbarButtonsToUse) && (
                             endConferenceSupported
                                 ? <HangupMenuButton
                                     ariaControls = 'hangup-menu'
@@ -319,13 +319,14 @@ export default function Toolbox({
                                             notifyMode = { buttonsWithNotifyClick?.get('hangup') } />
                                     </ContextMenu>
                                 </HangupMenuButton>
-                                : <HangupButton
+                                :  */}
+                                <HangupButton
                                     buttonKey = 'hangup'
                                     customClass = 'hangup-button'
                                     key = 'hangup-button'
                                     notifyMode = { buttonsWithNotifyClick.get('hangup') }
                                     visible = { isButtonEnabled('hangup', toolbarButtonsToUse) } />
-                        )}
+                        {/* )} */}
                     </div>
                 </div>
             </div>
